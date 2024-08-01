@@ -1,5 +1,6 @@
 DATE:
 01/08/24 12:35
+
 PROMPT:
 
 ollama run codellama "write descriotion of code: $(cat "Z:\My Drive\Proyects\Developer\python\codellamaAssistant\src\interface.py")"
@@ -41,3 +42,73 @@ clipboard.
 The program also defines a Tkinter root window and adds several widgets to it, including text boxes for displaying
 the results, buttons for opening and processing data, check boxes for case conversion, and a close button. The
 program uses `grid()` method to position the widgets on the window.
+
+
+
+
+DATE:
+01/08/24 12:50
+
+PROMPT:
+
+PS C:\Users\alvar> ollama run codellama "write descriotion of code: $(cat "Z:\My Drive\Proyects\Developer\python\codellamaAssistant\src\functions.py")"
+
+
+RESULST:
+
+This code is a Python script that uses the Tkinter library to create a simple GUI for searching and processing
+data. It allows the user to select a file from their local machine using the `filedialog` module, read the
+contents of the selected file, and then search for a specific value within the text. The results are then written
+to a log file and displayed in the GUI's text box.
+
+Here is a breakdown of the code:
+
+1. The first block of code imports the necessary modules from the standard library and other libraries. It
+includes `tkinter`, `filedialog`, `messagebox`, `pyperclip`, and `ollama` for reading and writing files,
+displaying dialog boxes, copying data to the clipboard, and processing text using a machine learning model.
+2. The next block of code defines a function called `open_file()` that allows the user to select a file from their
+local machine using the `filedialog` module. It returns the path to the selected file and the name of the folder
+containing it.
+3. The third block of code defines a function called `process_data()` that takes in four arguments: the path to
+the selected file, the contents of the file as a string, the name of the folder containing the file, and the value
+to search for within the text. It uses the `ollama` library to generate a response based on the input prompt and
+returns the generated response, the actual response, and the data log value.
+4. The fourth block of code defines a function called `data_log()` that takes in four arguments: the path to the
+selected file, the name of the folder containing the file, the actual response, and the value to search for within
+the text. It formats the data into a string and appends it to a log file located in the same folder as the
+selected file.
+5. The fifth block of code defines a function called `clean_log_data()` that cleans up the log data by removing
+any unnecessary characters or whitespace.
+6. The final block of code defines a function called `copy_result()` that copies the contents of the text box to
+the clipboard using the `pyperclip` library and displays a message box with the result. It also sets up the GUI
+for the user to enter the value to search for and click the "Search" button.
+7. The code then creates an instance of the `Tkinter.Tk()` class, which represents the root window of the GUI, and
+calls the `mainloop()` method on it. This starts the event loop that allows the user to interact with the GUI.
+
+
+
+
+DATE:
+01/08/24 13:01
+
+PROMPT:
+PS C:\Users\alvar> ollama run codellama "Escribe una descipción del siguiente codigo: $(cat "Z:\My Drive\Proyects\Developer\python\codellamaAssistant\src\functions.py")"
+
+
+RESULST:
+This code is a Python script that uses the `ollama` library to generate responses based on prompts. The script has
+several functions:
+
+* `open_file()`: Opens a file dialog box and allows the user to select a file to read from. It returns the path of
+the selected file, as well as the current working directory and the contents of the selected file.
+* `timestamp_format()`: Returns the current timestamp in the format of "%Y-%m-%d %H:%M:%S".
+* `process_data()`: Processes the data read from a file using the `ollama` library to generate responses based on
+prompts. It takes the path of the selected file, the contents of the file, the current working directory, and a
+search value as input, and returns the generated response, as well as writes the response to a log file.
+* `data_log()`: Writes the data to a log file in the format of "timestamp\n P: Busca todo lo relacionado con:
+{search_value}.\n Dentro del siguiente arcvhivo: {file_path}\n R: {actual_responce}".
+* `clean_log_data()`: Cleans the log data by deleting all the text in a text box.
+* `copy_result()`: Copies the result data to the clipboard using the `pyperclip` library.
+
+The script also uses several other libraries, including `tkinter`, `filedialog`, `messagebox`, `scrolledtext`, and
+`os`.
