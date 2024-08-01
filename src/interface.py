@@ -38,7 +38,6 @@ def get_process():
     # Call the imported function
     # messagebox.showinfo("Result", f"The result is: {result}")
     
-    
 def close_app():
     root.quit()
 
@@ -56,15 +55,21 @@ label.grid(row=0, column=0, padx=5)
 search_value = tk.Entry(frame,width=30 )
 search_value.grid(row=0, column=1, padx=5)
 
-# Open File button
-open_button = tk.Button(frame, text="Open File", command=get_eval_data)
-open_button.grid(row=1, column=0, padx=5)
-
 # Process Data button
 process_button = tk.Button(frame, text="Process Data", command=get_process)
 process_button.grid(row=1, column=1, padx=5)
 
+# Text box to show result data
+text_box = ScrolledText(root, wrap=tk.WORD, width=100, height=25)
+text_box.pack(pady=10)
+
+root.mainloop()
+
 """
+# Open File button
+open_button = tk.Button(frame, text="Open File", command=get_eval_data)
+open_button.grid(row=1, column=0, padx=5)
+
 # Clean Data button
 clean_button = tk.Button(frame, text="Clean Data", command=clean_log_data)
 clean_button.grid(row=0, column=2, padx=5)
@@ -93,9 +98,5 @@ check2.grid(row=1, column=1, pady=5)
 check3 = tk.Checkbutton(frame, text="Title Case", variable=var3)
 check3.grid(row=1, column=2, pady=5)
 """
-# Text box to show result data
-text_box = ScrolledText(root, wrap=tk.WORD, width=100, height=25)
-text_box.pack(pady=10)
 
-root.mainloop()
 
