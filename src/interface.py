@@ -49,15 +49,30 @@ root.geometry('850x500')
 frame = tk.Frame(root)
 frame.pack(pady=10)
 
-label = tk.Label(frame,text="Termino de Busqueda")
-label.grid(row=0, column=0, padx=5)
+# Checkbuttons --------------------------------------------------
+var1 = tk.BooleanVar()
+var2 = tk.BooleanVar()
+var3 = tk.BooleanVar()
+
+check1 = tk.Checkbutton(frame, text="Uppercase", variable=var1)
+check1.grid(row=0, column=0, pady=5)
+
+check2 = tk.Checkbutton(frame, text="Lowercase", variable=var2)
+check2.grid(row=0, column=1, pady=5)
+
+check3 = tk.Checkbutton(frame, text="Title Case", variable=var3)
+check3.grid(row=0, column=2, pady=5)
+# --------------------------------------------------------------- 
+
+label = tk.Label(frame,text="Ask questions")
+label.grid(row=1, column=0, padx=5)
 
 search_value = tk.Entry(frame,width=30 )
-search_value.grid(row=0, column=1, padx=5)
+search_value.grid(row=1, column=1, padx=5)
 
 # Process Data button
 process_button = tk.Button(frame, text="Process Data", command=get_process)
-process_button.grid(row=1, column=1, padx=5)
+process_button.grid(row=2, column=1, padx=5)
 
 # Text box to show result data
 text_box = ScrolledText(root, wrap=tk.WORD, width=100, height=25)
@@ -84,19 +99,7 @@ close_button.grid(row=0, column=4, padx=5)
 
 
 
-# Checkbuttons
-var1 = tk.BooleanVar()
-var2 = tk.BooleanVar()
-var3 = tk.BooleanVar()
 
-check1 = tk.Checkbutton(frame, text="Uppercase", variable=var1)
-check1.grid(row=1, column=0, pady=5)
-
-check2 = tk.Checkbutton(frame, text="Lowercase", variable=var2)
-check2.grid(row=1, column=1, pady=5)
-
-check3 = tk.Checkbutton(frame, text="Title Case", variable=var3)
-check3.grid(row=1, column=2, pady=5)
 """
 
 
